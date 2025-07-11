@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: pincodeapi
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pincode_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cache:
+    type: caffeine
+
+caffeine:
+  spec: maximumSize=500,expireAfterWrite=6h
+
+google:
+  api:
+    key: apikey
+
+logging:
+  level:
+    org.springframework: info
